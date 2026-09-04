@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Srikanth Kunta — Content, Video &amp; Marketing Analytics</title>
+<meta name="description" content="Social Media &amp; Marketing Manager. I make the content and read the data. Video, design, campaigns and analytics — built end to end.">
+<link rel="canonical" href="https://kuntasrikanth.github.io/">
+<meta property="og:type" content="website"><meta property="og:url" content="https://kuntasrikanth.github.io/">
+<meta property="og:title" content="Srikanth Kunta — Content, Video &amp; Marketing Analytics">
+<meta property="og:description" content="I make the content and read the data. Those two halves usually sit in different people.">
+<meta property="og:image" content="https://kuntasrikanth.github.io/media/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Srikanth Kunta — Content, Video &amp; Marketing Analytics">
+<meta name="twitter:image" content="https://kuntasrikanth.github.io/media/og.png">
+<link rel="icon" href="media/icon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="media/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+ --bg:#070810; --bg2:#0b0d18; --card:rgba(255,255,255,.032); --card2:rgba(255,255,255,.055);
+ --line:rgba(255,255,255,.075); --line2:rgba(255,255,255,.15);
+ --txt:#f3f4f8; --mut:#8f97a6; --mut2:#5a6272;
+ --a:#ffb703; --o:#ff6b35; --r:#e63946; --v:#7c5cff;
+ --grad:linear-gradient(120deg,#ffb703,#ff6b35 52%,#e63946);
+ --max:1260px; --rad:22px;
+ --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--txt);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;position:relative}
+img,video{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 26px}
+.em{font-style:italic;font-family:'Instrument Serif',Georgia,serif;font-weight:400;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* ===== BACKGROUND: aurora mesh + grid + grain ===== */
+.bgfx{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.mesh{position:absolute;border-radius:50%;filter:blur(90px);mix-blend-mode:screen;will-change:transform}
+.m1{width:56vw;height:56vw;background:radial-gradient(circle,rgba(255,107,53,.55),transparent 62%);top:-18vw;left:-14vw;animation:f1 26s ease-in-out infinite alternate}
+.m2{width:48vw;height:48vw;background:radial-gradient(circle,rgba(255,183,3,.42),transparent 62%);top:26vh;right:-16vw;animation:f2 32s ease-in-out infinite alternate}
+.m3{width:44vw;height:44vw;background:radial-gradient(circle,rgba(124,92,255,.34),transparent 62%);bottom:-14vw;left:22vw;animation:f3 29s ease-in-out infinite alternate}
+.m4{width:34vw;height:34vw;background:radial-gradient(circle,rgba(230,57,70,.3),transparent 62%);top:58vh;left:-8vw;animation:f1 35s ease-in-out infinite alternate-reverse}
+@keyframes f1{to{transform:translate3d(9vw,7vh,0) scale(1.16)}}
+@keyframes f2{to{transform:translate3d(-11vw,10vh,0) scale(1.1)}}
+@keyframes f3{to{transform:translate3d(7vw,-9vh,0) scale(1.2)}}
+.grid{position:absolute;inset:0;opacity:.5;
+ background-image:linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);
+ background-size:74px 74px;
+ -webkit-mask-image:radial-gradient(ellipse 100% 65% at 50% 0%,#000 30%,transparent 78%);
+ mask-image:radial-gradient(ellipse 100% 65% at 50% 0%,#000 30%,transparent 78%)}
+.vig{position:absolute;inset:0;background:radial-gradient(ellipse 120% 80% at 50% 0%,transparent 30%,rgba(7,8,16,.72) 78%,var(--bg) 100%)}
+.grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.04;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E")}
+@media(prefers-reduced-motion:reduce){.mesh{animation:none}}
+
+/* ===== NAV ===== */
+nav{position:fixed;top:0;left:0;right:0;z-index:80;padding:18px 0;transition:.4s var(--ease)}
+nav.stuck{background:rgba(7,8,16,.7);backdrop-filter:blur(22px) saturate(1.6);border-bottom:1px solid var(--line);padding:11px 0}
+.nb{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-weight:800;letter-spacing:-.025em;font-size:1.04rem}
+.brand i{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.nlinks{display:flex;gap:4px;font-size:.85rem;color:var(--mut);font-weight:500}
+.nlinks a{padding:7px 13px;border-radius:99px;transition:.25s var(--ease)}
+.nlinks a:hover{color:var(--txt);background:rgba(255,255,255,.06)}
+.nbtn{padding:10px 18px;border-radius:99px;background:var(--txt);color:#070810;font-weight:700;font-size:.83rem;transition:.3s var(--ease)}
+.nbtn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(255,183,3,.26)}
+@media(max-width:900px){.nlinks{display:none}}
+
+/* ===== HERO ===== */
+header{position:relative;z-index:3;padding:180px 0 60px}
+.tagline{display:inline-flex;align-items:center;gap:9px;font-size:.73rem;letter-spacing:.17em;text-transform:uppercase;color:var(--mut);font-weight:700;border:1px solid var(--line2);padding:8px 16px;border-radius:99px;margin-bottom:32px;background:rgba(255,255,255,.03);backdrop-filter:blur(10px)}
+.dot{width:6px;height:6px;border-radius:50%;background:#39d353;box-shadow:0 0 0 0 rgba(57,211,83,.6);animation:pl 2.4s infinite}
+@keyframes pl{70%{box-shadow:0 0 0 10px rgba(57,211,83,0)}100%{box-shadow:0 0 0 0 rgba(57,211,83,0)}}
+h1{font-size:clamp(3rem,8.4vw,7rem);line-height:.94;letter-spacing:-.042em;font-weight:800;margin-bottom:28px;max-width:15ch}
+.hsub{font-size:clamp(1.03rem,1.7vw,1.26rem);color:var(--mut);max-width:62ch;line-height:1.62}
+.hsub b{color:var(--txt);font-weight:600}
+.hcta{display:flex;gap:12px;flex-wrap:wrap;margin-top:36px}
+.btn{padding:14px 27px;border-radius:99px;font-weight:700;font-size:.92rem;transition:.3s var(--ease);border:1px solid transparent;display:inline-flex;align-items:center;gap:8px}
+.b1{background:var(--grad);color:#070810}
+.b1:hover{transform:translateY(-3px);box-shadow:0 16px 44px rgba(255,107,53,.36)}
+.b2{border-color:var(--line2);color:var(--txt);background:rgba(255,255,255,.03);backdrop-filter:blur(10px)}
+.b2:hover{border-color:var(--txt);transform:translateY(-3px)}
+
+/* kinetic type */
+.kw{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.06em}
+.kw>i{display:inline-block;font-style:inherit;transform:translateY(110%) rotate(3deg);opacity:0;animation:kin 1.05s var(--ease) forwards}
+@keyframes kin{to{transform:translateY(0) rotate(0);opacity:1}}
+</style>
+<style>
+/* ===== BENTO ===== */
+.bento{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:minmax(78px,auto);gap:14px}
+.bx{position:relative;overflow:hidden;border-radius:var(--rad);padding:26px;
+ background:linear-gradient(158deg,rgba(255,255,255,.055),rgba(255,255,255,.018));
+ border:1px solid var(--line);backdrop-filter:blur(20px);transition:.45s var(--ease)}
+.bx::before{content:'';position:absolute;inset:0;border-radius:inherit;padding:1px;
+ background:linear-gradient(140deg,rgba(255,255,255,.22),transparent 42%,transparent 60%,rgba(255,255,255,.09));
+ -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+ -webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;opacity:.8}
+.bx::after{content:'';position:absolute;inset:0;pointer-events:none;opacity:0;transition:.45s;
+ background:radial-gradient(460px circle at var(--mx,50%) var(--my,50%),rgba(255,183,3,.1),transparent 45%)}
+.bx:hover{transform:translateY(-5px);border-color:var(--line2)}
+.bx:hover::after{opacity:1}
+.bx.pad0{padding:0}
+.k2{grid-column:span 2}.k3{grid-column:span 3}.k4{grid-column:span 4}.k5{grid-column:span 5}
+.k6{grid-column:span 6}.k7{grid-column:span 7}.k8{grid-column:span 8}.k9{grid-column:span 9}.k12{grid-column:span 12}
+.r2{grid-row:span 2}.r3{grid-row:span 3}
+.feat{background:linear-gradient(150deg,rgba(255,183,3,.13),rgba(230,57,70,.05));border-color:rgba(255,183,3,.24)}
+.bnum{font-size:clamp(2.1rem,3.6vw,3.1rem);font-weight:800;letter-spacing:-.035em;line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.blab{font-size:.83rem;color:var(--mut);margin-top:10px;line-height:1.48}
+.bk{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mut2);font-weight:700;margin-bottom:14px}
+@media(max-width:1000px){.k2,.k3,.k4,.k5{grid-column:span 6}.k7,.k8,.k9{grid-column:span 12}}
+@media(max-width:640px){.bento{gap:11px}.k2,.k3,.k4,.k5,.k6,.k7{grid-column:span 12}.r2,.r3{grid-row:auto}}
+
+/* ===== SECTIONS ===== */
+section{position:relative;z-index:3;padding:100px 0}
+.eyebrow{display:block;font-size:.71rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mut2);font-weight:700;margin-bottom:16px}
+h2{font-size:clamp(1.9rem,4.3vw,3.15rem);line-height:1.04;letter-spacing:-.035em;font-weight:800;margin-bottom:18px;max-width:19ch}
+.lead{color:var(--mut);font-size:1.04rem;max-width:66ch;line-height:1.68}
+h3{font-size:1.17rem;font-weight:700;letter-spacing:-.018em;margin-bottom:9px;line-height:1.3}
+p{color:var(--mut);font-size:.95rem;line-height:1.68}
+p+p{margin-top:11px}
+p b,li b{color:var(--txt);font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:17px}
+.chip{font-size:.75rem;padding:6px 12px;border-radius:99px;border:1px solid var(--line2);color:var(--mut);font-weight:500;background:rgba(255,255,255,.03)}
+.sm{font-size:.88rem}
+
+/* media inside bento */
+.mv{width:100%;aspect-ratio:9/16;object-fit:cover;display:block}
+.mvw{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+.mi{width:100%;object-fit:cover;display:block}
+.cap{padding:20px 22px}
+
+/* ===== TIMELINE ===== */
+.tl{margin-top:46px;position:relative;padding-left:28px}
+.tl::before{content:'';position:absolute;left:5px;top:10px;bottom:10px;width:1px;background:linear-gradient(180deg,transparent,var(--line2) 10%,var(--line2) 90%,transparent)}
+.ti{position:relative;padding:0 0 36px 6px}
+.ti::before{content:'';position:absolute;left:-27px;top:8px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--line2);transition:.4s}
+.ti.tnow::before{background:var(--grad);border-color:transparent;box-shadow:0 0 0 6px rgba(255,183,3,.13)}
+.tyr{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--mut2);font-weight:700;margin-bottom:7px}
+.twh{font-size:.86rem;color:var(--a);font-weight:600;margin-bottom:10px}
+.ti h3{margin-bottom:7px}
+
+/* ===== GALLERY ===== */
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(238px,1fr));gap:14px;margin-top:44px}
+.gi{border-radius:18px;overflow:hidden;transition:.45s var(--ease);display:block;
+ background:linear-gradient(158deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border:1px solid var(--line)}
+.gi:hover{transform:translateY(-6px);border-color:var(--line2)}
+.gi img{width:100%;aspect-ratio:4/5;object-fit:cover;transition:.6s var(--ease)}
+.gi:hover img{transform:scale(1.04)}
+.gi span{display:block;padding:15px 17px;font-size:.81rem;color:var(--mut);line-height:1.45}
+.gi span b{display:block;color:var(--txt);font-weight:600;margin-bottom:3px;font-size:.9rem}
+.gal4{grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
+.gal4 .gi img{aspect-ratio:3/2}
+
+/* ===== SKILLS ===== */
+.sk{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:44px}
+.skc{border-radius:18px;padding:24px;background:linear-gradient(158deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border:1px solid var(--line);transition:.4s var(--ease)}
+.skc:hover{transform:translateY(-4px);border-color:var(--line2)}
+.skh{font-size:.78rem;letter-spacing:.13em;text-transform:uppercase;font-weight:800;margin-bottom:15px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.skc ul{list-style:none}
+.skc li{font-size:.9rem;color:var(--mut);padding:6px 0;border-bottom:1px solid rgba(255,255,255,.045)}
+.skc li:last-child{border-bottom:0}
+
+/* metric pill */
+.mpill{margin-top:15px;padding:16px;border-radius:15px;background:linear-gradient(150deg,rgba(255,183,3,.14),rgba(230,57,70,.05));border:1px solid rgba(255,183,3,.28)}
+.mpv{font-weight:800;font-size:1.04rem;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.mpl{font-size:.8rem;color:var(--mut);margin-top:4px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.kw>i{animation:none;transform:none;opacity:1}}
+@media(max-width:760px){.wsplit{grid-template-columns:1fr !important}}
+</style>
+<style>
+.c3{background:linear-gradient(158deg,rgba(255,255,255,.05),rgba(255,255,255,.015));
+      border:1px solid var(--line);border-radius:16px;padding:24px 22px 20px;margin-top:16px;
+      position:relative;overflow:hidden}
+  .c3 .c3h{font-size:15.5px;font-weight:800;letter-spacing:-.2px;color:var(--txt);margin-bottom:3px}
+  .c3 .c3s{font-size:12.5px;color:var(--mut);margin-bottom:20px;line-height:1.45}
+  .c3 .c3note{font-size:11.5px;color:var(--mut);margin-top:16px;font-style:italic;opacity:.8}
+
+  .c3rows{display:grid;gap:11px;perspective:1400px;perspective-origin:58% 40%}
+  .c3row{display:grid;grid-template-columns:var(--lw,150px) 1fr auto;align-items:center;gap:14px}
+  .c3lab{font-size:12.5px;color:var(--txt);text-align:right;line-height:1.25;font-weight:600}
+  .c3val{font-size:12.5px;color:var(--mut);font-variant-numeric:tabular-nums;min-width:52px;
+         font-weight:700;transition:color .3s ease}
+  .c3row:hover .c3val{color:var(--a)}
+
+  .c3track{position:relative;height:26px;transform-style:preserve-3d;
+           transform:rotateX(var(--rx,13deg)) rotateY(var(--ry,-17deg))}
+  .c3bar{position:absolute;left:0;top:0;height:100%;width:0;transform-style:preserve-3d;
+         background:linear-gradient(90deg,var(--c1),var(--c2));border-radius:2px;
+         transition:width 1.15s cubic-bezier(.19,1,.22,1)}
+  .c3.on .c3bar{width:var(--w)}
+  /* top face */
+  .c3bar::before{content:'';position:absolute;left:0;bottom:100%;width:100%;height:var(--d,13px);
+    background:linear-gradient(90deg,var(--c1),var(--c2));filter:brightness(1.45);
+    transform-origin:bottom;transform:rotateX(90deg);border-radius:2px 2px 0 0}
+  /* right cap */
+  .c3bar::after{content:'';position:absolute;left:100%;top:0;width:var(--d,13px);height:100%;
+    background:var(--c2);filter:brightness(.62);
+    transform-origin:left;transform:rotateY(90deg)}
+  .c3bar i{position:absolute;inset:0;border-radius:2px;
+    background:linear-gradient(180deg,rgba(255,255,255,.22),transparent 58%);pointer-events:none}
+
+  /* grid lines behind */
+  .c3grid{position:absolute;inset:0;pointer-events:none;
+    background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.045) 0 1px,transparent 1px 20%)}
+
+  .c3row:hover .c3bar{filter:brightness(1.14)}
+  .c3row{transition:transform .3s ease}
+  .c3row:hover{transform:translateX(3px)}
+
+  @media(max-width:640px){
+    .c3row{grid-template-columns:var(--lws,96px) 1fr auto;gap:9px}
+    .c3lab{font-size:11px}
+    .c3track{transform:none}
+    .c3bar::before,.c3bar::after{display:none}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .c3bar{transition:none}
+    .c3track{transform:none}
+  }
+
+
+  /* ============ ADVANCED CHART FX ============ */
+  /* animated light sweep travelling along every bar */
+  .c3bar::marker{content:''}
+  .c3bar u{position:absolute;inset:0;overflow:hidden;border-radius:2px;pointer-events:none}
+  .c3bar u::after{content:'';position:absolute;top:0;left:-45%;width:38%;height:100%;
+    background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);
+    transform:skewX(-16deg)}
+  .c3.on .c3bar u::after{animation:barsweep 2.8s ease-in-out infinite}
+  @keyframes barsweep{0%{left:-45%}55%{left:118%}100%{left:118%}}
+
+  /* glow on featured bars */
+  .c3bar.hot{box-shadow:0 0 22px -4px var(--c2),0 0 46px -12px var(--c1)}
+
+  /* ============ 3D DONUT ============ */
+  .dnt{display:grid;grid-template-columns:190px 1fr;gap:26px;align-items:center;margin-top:6px}
+  @media(max-width:620px){.dnt{grid-template-columns:1fr;justify-items:center}}
+  .dnt-w{position:relative;width:180px;height:180px;perspective:900px}
+  .dnt-w svg{width:100%;height:100%;transform:rotateX(18deg);transition:transform .5s cubic-bezier(.19,1,.22,1);
+    filter:drop-shadow(0 14px 22px rgba(0,0,0,.6))}
+  .dnt-w:hover svg{transform:rotateX(4deg) rotateZ(-4deg)}
+  .dnt-w .seg{fill:none;stroke-width:20;stroke-linecap:butt;
+    stroke-dasharray:var(--len) 999;stroke-dashoffset:var(--len);
+    transition:stroke-dashoffset 1.35s cubic-bezier(.19,1,.22,1)}
+  .c3.on .dnt-w .seg{stroke-dashoffset:0}
+  .dnt-w .seg:hover{stroke-width:25}
+  .dnt-c{position:absolute;inset:0;display:grid;place-items:center;text-align:center;pointer-events:none}
+  .dnt-c b{display:block;font-size:24px;font-weight:800;letter-spacing:-1px;
+    background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .dnt-c span{font-size:10px;letter-spacing:1.2px;color:var(--mut);text-transform:uppercase}
+  .lgd{display:grid;gap:11px}
+  .lgd div{display:flex;align-items:center;gap:11px;font-size:13px}
+  .lgd i{width:11px;height:11px;border-radius:3px;flex:none;box-shadow:0 0 12px -2px currentColor}
+  .lgd b{margin-left:auto;font-variant-numeric:tabular-nums;color:var(--txt)}
+  .lgd em{font-style:normal;color:var(--mut);font-size:11.5px;min-width:44px;text-align:right}
+@keyframes barsweep{0%{left:-45%}55%{left:118%}
+.c3{backdrop-filter:blur(18px);border:1px solid var(--line)!important;border-radius:18px!important;padding:24px!important;margin:0!important;transition:.4s var(--ease)}
+.c3:hover{border-color:var(--line2)!important;transform:translateY(-4px)}
+.c3grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
+@media(max-width:900px){.c3grid2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="bgfx">
+  <div class="mesh m1"></div><div class="mesh m2"></div><div class="mesh m3"></div><div class="mesh m4"></div>
+  <div class="grid"></div><div class="vig"></div>
+</div>
+<div class="grain"></div>
+
+<nav id="nav"><div class="wrap nb">
+  <a class="brand" href="#top">Srikanth<i>.</i></a>
+  <div class="nlinks">
+    <a href="#work">Work</a><a href="#journey">Journey</a><a href="#analytics">Analytics</a><a href="#video">Video</a><a href="#design">Design</a><a href="#teaching">Teaching</a><a href="#skills">Toolkit</a>
+  </div>
+  <a class="nbtn" href="mailto:kuntasrikanth00@gmail.com">Get in touch</a>
+</div></nav>
+
+<header id="top"><div class="wrap">
+  <div class="tagline"><span class="dot"></span>Open to marketing analytics &amp; content roles</div>
+  <h1 id="kh">I make the content and <span class="em">read the data.</span></h1>
+  <p class="hsub rv">Those two halves usually sit in different people. I am <b>Social Media &amp; Marketing Manager</b> at Crazy Clearance, completing an <b>MSc in Business Analytics</b>, and I built a channel from zero to <b>1.2M+ views</b> by treating retention data as the feedback loop.</p>
+  <div class="hcta rv">
+    <a class="btn b1" href="#work">See the work &#8595;</a>
+    <a class="btn b2" href="https://github.com/kuntasrikanth" target="_blank" rel="noopener">GitHub &#8599;</a>
+  </div>
+
+  <div class="bento" style="margin-top:66px">
+    <div class="bx k3 rv"><div class="bnum">4,280+</div><div class="blab">Subscribers built from zero, organic, no budget or team</div></div>
+    <div class="bx k3 rv"><div class="bnum">1.2M+</div><div class="blab">Total views across three years of weekly publishing</div></div>
+    <div class="bx k3 rv"><div class="bnum">100%</div><div class="blab">Stock accuracy held across a full year at DX Group</div></div>
+    <div class="bx k3 rv"><div class="bnum">355</div><div class="blab">Organisations analysed end to end in a solo market study</div></div>
+
+    <div class="bx k8 feat rv">
+      <div class="bk">The audit nobody asked for</div>
+      <h3 style="font-size:1.4rem">85 million views. Almost no conversion.</h3>
+      <p>I noticed my employer's channel had 132,000 followers and 85 million reel views and was converting almost nothing. Nobody asked me to look. I wrote a full audit, diagnosed the causes and turned it into a four-phase plan with owners and measurable targets.</p>
+      <p><b>They created the job from that proposal.</b> Reach on its own tells you very little. The gap between reach and outcome is the whole job.</p>
+    </div>
+    <div class="bx k4 pad0 rv" style="display:flex;flex-direction:column">
+      <img class="mi" src="media/profile.jpg" alt="Srikanth Kunta" loading="lazy" style="aspect-ratio:1/1">
+      <div class="cap"><b style="display:block;font-weight:700;font-size:.95rem;margin-bottom:3px">Srikanth Kunta</b><span style="font-size:.83rem;color:var(--mut)">Tipton, West Midlands</span></div>
+    </div>
+  </div>
+</div></header>
+
+<section id="work"><div class="wrap">
+  <div class="rv"><span class="eyebrow">Selected work</span>
+  <h2>Made, measured, and <span class="em">honest about both</span></h2>
+  <p class="lead">Every piece here I made myself, end to end. Where something did not work, it says so.</p></div>
+
+  <div class="bento" style="margin-top:46px">
+    <div class="bx k8 pad0 rv">
+      <div style="display:grid;grid-template-columns:minmax(0,290px) 1fr" class="wsplit">
+        <video class="mv" muted loop playsinline preload="metadata" controls src="media/cc_showcase.mp4" poster="media/thumb_cc_showcase.jpg"></video>
+        <div style="padding:26px">
+          <div class="bk">In-house &middot; DaVinci Resolve</div>
+          <h3>Product content for Crazy Clearance</h3>
+          <p>Shot in-store while the shop was trading. No crew, no studio, no second take &mdash; a phone, whatever light the shop floor had, and a product that needed to sell this week rather than look pretty.</p>
+          <p><b>Why it is made this way:</b> clearance content works when it feels like a genuine find, not an advert. Overproduce it and people stop believing the price.</p>
+          <div class="chips"><span class="chip">DaVinci Resolve</span><span class="chip">Phone-first</span><span class="chip">9:16</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bx k4 rv">
+      <div class="bk">Systems</div>
+      <h3>The planner I run the job on</h3>
+      <p class="sm">Four pillars, fourteen posts a week, filmed as stock lands. Every post logged against one number.</p>
+      <div class="mpill"><div class="mpv">Enquiries / 1,000 reach</div><div class="mpl">The one that decides what I make next</div></div>
+      <p class="sm" style="margin-top:13px">High reach with no enquiries is entertainment. Modest reach with real enquiries is the business.</p>
+    </div>
+
+    <div class="bx k4 pad0 rv">
+      <video class="mv" muted loop playsinline preload="metadata" controls src="media/rorrim_ad.mp4" poster="media/poster_rorrim.jpg"></video>
+      <div class="cap"><div class="bk">Spec ad &middot; Self-initiated</div><h3>Concept ad for Rorrim</h3>
+      <p class="sm">Nobody briefed this and nobody paid for it. Built so the app only appears once the viewer has already felt the problem.</p></div>
+    </div>
+
+    <div class="bx k8 rv">
+      <div class="bk">Analytics &middot; End to end</div>
+      <h3 style="font-size:1.3rem">Eco-Brick Market Intelligence</h3>
+      <p>355 organisations across 31 regions taken from raw scrape to written recommendation in ten documented phases. Cleaned 361 records to 355, fixed four data-quality faults, and built assertion tests so future errors surface automatically rather than producing a plausible wrong answer.</p>
+      <p>Built a Random Forest closure-risk model with stratified cross-validation, <b>scored on recall rather than accuracy</b> because the rare failure cases were the ones that mattered. Delivered as a three-page Power BI report with seven insights, each structured fact, interpretation, recommendation &mdash; with the limitations of the data stated openly rather than hidden.</p>
+      <div class="chips"><span class="chip">Python</span><span class="chip">scikit-learn</span><span class="chip">Power BI</span><span class="chip">Random Forest</span><span class="chip">Git</span></div>
+      <a class="btn b2" style="margin-top:17px;padding:10px 18px;font-size:.84rem" href="https://github.com/kuntasrikanth/eco-brick-market-intelligence" target="_blank" rel="noopener">View repository &#8599;</a>
+    </div>
+  </div>
+</div></section>
+
+<section id="video"><div class="wrap">
+  <div class="rv"><span class="eyebrow">Video</span>
+  <h2>Before &rarr; After: <span class="em">what editing actually changes</span></h2>
+  <p class="lead">Raw phone footage beside the finished cut. Same material, different decisions.</p></div>
+
+  <div class="bento" style="margin-top:46px">
+    <div class="bx k6 pad0 rv">
+      <video class="mv" muted loop playsinline preload="metadata" controls src="media/source_before.mp4" poster="media/poster_before.jpg"></video>
+      <div class="cap"><div class="bk">Before</div><h3>Straight off the phone</h3><p class="sm">The unedited source clip: flat colour, no pacing, no music, no structure.</p></div>
+    </div>
+    <div class="bx k6 pad0 rv">
+      <video class="mv" muted loop playsinline preload="metadata" controls src="media/edited_after.mp4" poster="media/poster_after.jpg"></video>
+      <div class="cap"><div class="bk">After</div><h3>Graded, paced, captioned</h3><p class="sm">Colour graded, cut to a rhythm, scored and captioned &mdash; built to hold attention past the first three seconds.</p></div>
+    </div>
+
+    <div class="bx k6 pad0 rv">
+      <video class="mv" muted loop playsinline preload="metadata" controls src="media/story_canva.mp4" poster="media/poster_story.jpg"></video>
+      <div class="cap"><div class="bk">Motion design &middot; Canva</div><h3>Story creative for paid social</h3><p class="sm">Motion-designed story creative built for Instagram and Facebook advertising &mdash; animated type, timed reveals and brand-matched colour, sized for full-screen story placement.</p></div>
+    </div>
+    <div class="bx k6 pad0 rv">
+      <video class="mv" muted loop playsinline preload="metadata" controls src="media/yt_short.mp4" poster="media/poster_yt.jpg"></video>
+      <div class="cap"><div class="bk">On camera &middot; Presenting</div><h3>Scripted, filmed and presented by me</h3><p class="sm">A full episode from my channel &mdash; researched, written, delivered to camera, edited and published solo. Keeping a technical subject clear and holding attention for the full runtime.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="journey"><div class="wrap">
+  <div class="rv"><span class="eyebrow">The journey</span>
+  <h2>Where I started, <span class="em">what I taught myself</span></h2>
+  <p class="lead">No shortcuts. I started with a camera and curiosity and built everything else one project at a time.</p></div>
+  <div class="tl">
+    <div class="ti rv"><div class="tyr">Jul 2023</div><h3>Picked up a camera and started explaining space in Telugu</h3><div class="twh">Copy The Facts Telugu &middot; Founder</div><p>Zero audience, zero budget, no editing background. Taught myself scripting, filming, editing, thumbnails and publishing &mdash; covering ISRO and NASA missions, SpaceX launches and rocket science. Everything solo, every upload.</p></div>
+    <div class="ti rv"><div class="tyr">Apr 2024 &mdash; Mar 2025</div><h3>Learned to teach, present and be relied on</h3><div class="twh">Digital Equity &middot; ICT Facilitator &middot; Hyderabad</div><p>Delivered structured daily sessions to student cohorts, adapting to how each group performed. Awarded a formal Letter of Work Experience for dedication and consistent delivery.</p></div>
+    <div class="ti rv"><div class="tyr">2024 &mdash; present</div><h3>Built a full market-intelligence pipeline, solo</h3><div class="twh">Eco-Brick Market Intelligence &middot; Independent</div><p>Taught myself Pandas, scikit-learn, Power BI and Git to take 355 manufacturers from raw scrape to a cleaned dataset, a weighted location model, a Random Forest risk model and a three-page dashboard.</p></div>
+    <div class="ti rv"><div class="tyr">Sep 2025 &mdash; present</div><h3>Went all-in on analytics</h3><div class="twh">MSc Business Analytics &middot; The University of Law</div><p>Data Analysis, Data Visualisation, Data &amp; Decision Making, Digital Marketing and Supply Chain Analytics &mdash; applied to my own end-to-end projects rather than stopping at coursework.</p></div>
+    <div class="ti rv"><div class="tyr">Oct 2025 &mdash; May 2026</div><h3>Learned operations from the floor up</h3><div class="twh">Logistics &amp; Compliance Operative &middot; DX Group</div><p>High-volume picking, packing and stock handling. Held 100% stock accuracy and full health and safety compliance. This is where I learned what operational data actually represents on the ground.</p></div>
+    <div class="ti rv"><div class="tyr">May 2026 &mdash; Sep 2026</div><h3>Customer-facing work, plus the brand's creative output</h3><div class="twh">Customer Service &amp; Operations Assistant &middot; Dropthepriceuk Ltd</div><p>Supporting B2B wholesale accounts by phone and email, and bringing content in-house: campaign assets, retail promo video, and the copy that went with them.</p></div>
+    <div class="ti rv tnow"><div class="tyr">Sep 2026 &mdash; present</div><h3>Wrote the audit nobody asked for. They created the job from it.</h3><div class="twh">Social Media &amp; Marketing Manager &middot; Dropthepriceuk Ltd (Crazy Clearance)</div><p>I own social media and marketing end to end for two retail stores: content calendar, filming, editing, poster and campaign design, copywriting, community management, and a monthly report on reach, engagement, audience growth and enquiries.</p></div>
+  </div>
+</div></section>
+
+<section id="analytics"><div class="wrap">
+  <div class="rv"><span class="eyebrow">Analytics</span>
+  <h2>Projects I built <span class="em">end to end</span></h2>
+  <p class="lead">Not coursework. Raw data to a written recommendation someone could act on, with the reasoning documented so it can be challenged.</p></div>
+  <div class="bento" style="margin-top:46px">
+    <div class="bx k7 pad0 rv">
+      <img class="mi" src="media/an_coffee.jpg" alt="Coffee sales dashboard built in Excel" loading="lazy">
+      <div class="cap"><div class="bk">Excel &middot; Power Query</div><h3>Coffee Sales Dashboard</h3>
+      <p>Three messy tables in, one interactive view out. Timeline plus Roast Type, Size and Loyalty Card slicers, all connected to all three charts &mdash; change one filter and the whole view moves together.</p>
+      <p><b>Designed so a non-analyst can answer their own question</b> without coming back to me. That constraint drove most of the design decisions.</p>
+      <a class="btn b2" style="margin-top:16px;padding:10px 18px;font-size:.84rem" href="https://github.com/kuntasrikanth/coffee-sales-dashboard-excel" target="_blank" rel="noopener">View repository &#8599;</a></div>
+    </div>
+    <div class="bx k5 rv">
+      <div class="bk">How I work with data</div>
+      <h3>The habits, not the tools</h3>
+      <p><b>Validate before you model.</b> I build assertion tests so a fault surfaces automatically rather than producing a plausible wrong answer.</p>
+      <p><b>Stress-test your own preference.</b> I ran the location model across every weighting scenario, not only the one I liked.</p>
+      <p><b>Score on what matters.</b> Recall over accuracy when the rare failures are the point.</p>
+      <p><b>Document the limitations.</b> Openly, in the report, where a reader can weigh them.</p>
+      <div class="chips"><span class="chip">Power BI</span><span class="chip">Tableau</span><span class="chip">SQL</span><span class="chip">Python</span><span class="chip">Excel VBA</span></div>
+    </div>
+
+    <div class="bx k12 rv" style="padding:26px">
+      <div class="bk">Eco-Brick Market Intelligence &middot; Live charts</div>
+      <h3 style="font-size:1.3rem">What 355 organisations across 31 regions actually showed</h3>
+      <p>Four outputs from the three-page Power BI report, rebuilt here in CSS so they animate on scroll rather than sitting as flat screenshots. Each answered a question the client would actually ask.</p>
+      <div class="c3grid2">
+<div class="c3" id="ch-loc">
+  <div class="c3h">Where should the factory go?</div>
+  <div class="c3s">Weighted location model &mdash; composite score across all 31 districts, top 10 shown. Criteria: demand 25%, competition 20%, modernisation gap, eco gap, market stability, raw-material access.</div>
+  <div class="c3rows">
+    <div class="c3row" style="--lw:158px;--lws:96px"><div class="c3lab">Ranga Reddy</div><div class="c3track"><div class="c3grid"></div><div class="c3bar" style="--w:93.8%;--c1:#ffb703;--c2:#ff6b35;transition-delay:0ms"><i></i><u></u></div></div><div class="c3val">0.797</div></div>
+    <div class="c3row" style="--lw:158px;--lws:96px"><div class="c3lab">Kamareddy</div><div class="c3track"><div class="c3grid"></div><div class="c3bar" style="--w:83.5%;--c1:#ff6b35;--c2:#e63946;transition-delay:75ms"><i></i><u></u></div></div><div class="c3val">0.710</div></div>
+    <div class="c3row" style="--lw:158px;--lws:96px"><div class="c3lab">Wanaparthy</div><div class="c3track"><div class="c3grid"></div><div class="c3bar" style="--w:80.8%;--c1:#ff6b35;--c2:#e63946;transition-delay:150ms"><i></i><u></u></div></div><div class="c3val">0.687</div></div>
+    <div class="c3row" style="--lw:158px;--lws:96px"><div class="c3lab">Sangareddy</div><div class="c3track"><div class="c3grid"></div><div class="c3bar" style="--w:71.9%;--c1:#3b4250;--c2:#4a525f;transition-delay:225ms"><i></i><u></u></div></div><div class="c3val">0.611</div></div>
+    <div class="c3row" style="--lw:158px;--lws:96px"><div class="c3lab">Jagtial</div><div class="c3track"><div class="c3grid"></div><div class="c3bar" style="--w:71.5%;--c1:#3b4250;--c2:#4a525f;transition-delay:300ms"><i></i><u></u></div></div><div class="c3val">0.608</div></div>
+    <div class="c3row" style="--lw:158px;--lws:96px"><div class="c3lab">Nizamabad</div><div class="c3track"><div class="c3grid"></div><div class="c3bar" style="--w:70.8%;--c1:#3b4250;--c2:#4a525f;transition-delay:375ms"><i></i><u></u></div></div><div class="c3val">0.602</div></div>
+    <div class="c3row" style="--lw:158px;--lws:96px"><div class="c3lab">Medak</div><div class="c3track"><div class="c3grid"></div><div class="c3bar" style="--w:69.3%;--c1:#3b4250;--c2:#4a525f;transition-delay:450ms"><i></i><u></u></div></div><div class="c3val">0.589</div></div>
+    <div class="c3row" style="--lw:158px;--lws:96px"><div class="c3lab">Hyderabad</div><div class="c3track"><div class="c3grid"></div><div class="c3bar" style="--w:68.7%;--c1:#3b4250;--c2:#4a525f;transition-delay:525ms"><i></i><u></u></div></div><div class="c3val">0.584</div></div>
+    <div class="c3row" style="--lw:158px;--lws:96px"><div class="c3lab">Nalgonda</div><div class="c3track"><div class="c3grid"></div><div class="c3bar" style="--w:65.3%;--c1:#3b4250;--c2:#4a525f;transition-delay:600ms"><i></i><u></u></div></div><div class="c3val">0.555</div></div>
+    <div class="c3row" style="--lw:158px;--lws:96px"><div class="c3lab">Peddapalli</div><div class="c3track"><div class="c3grid"></div><div class="c3bar" style="--w:62.9%;--c1:#3b4250;--c2:#4a525f;transition-delay:675ms"><i></i><u></u></div></div><div class="c3val">0.535</div></div>
+  </div>
+  <div class="c3note">Ranga Reddy held first place in every sensitivity scenario I tested, not just my preferred weighting.</div>
+</div>
+<div class="c3" id="ch-imp">
+  <div class="c3h">What actually predicts factory closure?</div>
+  <div class="c3s">Random Forest feature importance, trained on the full 355-row dataset.</div>
+  <div class="c3rows">
+    <div class="c3row" style="--lw:158px;--lws:96px"><div class="c3lab">Company size</div><div class="c3track"><div class="c3grid"></div><div class="c3bar" style="--w:89.1%;--c1:#e63946;--c2:#ff6b35;transition-delay:0ms"><i></i><u></u></div></div><div class="c3val">0.241</div></div>
+    <div class="c3row" style="--lw:158px;--lws:96px"><div class="c3lab">Size score</div><div class="c3track"><div class="c3grid"></div><div class="c3bar" style="--w:58.1%;--c1:#3b4250;--c2:#4a525f;transition-delay:75ms"><i></i><u></u></div></div><div class="c3val">0.157</div></div>
+    <div class="c3row" style="--lw:158px;--lws:96px"><div class="c3lab">Has contact no.</div><div class="c3track"><div class="c3grid"></div><div class="c3bar" style="--w:53.9%;--c1:#3b4250;--c2:#4a525f;transition-delay:150ms"><i></i><u></u></div></div><div class="c3val">0.146</div></div>
+    <div class="c3row" style="--lw:158px;--lws:96px"><div class="c3lab">Product type</div><div class="c3track"><div class="c3grid"></div><div class="c3bar" style="--w:50.5%;--c1:#3b4250;--c2:#4a525f;transition-delay:225ms"><i></i><u></u></div></div><div class="c3val">0.136</div></div>
+    <div class="c3row" style="--lw:158px;--lws:96px"><div class="c3lab">Machine type</div><div class="c3track"><div class="c3grid"></div><div class="c3bar" style="--w:38.5%;--c1:#3b4250;--c2:#4a525f;transition-delay:300ms"><i></i><u></u></div></div><div class="c3val">0.104</div></div>
+    <div class="c3row" style="--lw:158px;--lws:96px"><div class="c3lab">Modernisation score</div><div class="c3track"><div class="c3grid"></div><div class="c3bar" style="--w:32.7%;--c1:#3b4250;--c2:#4a525f;transition-delay:375ms"><i></i><u></u></div></div><div class="c3val">0.088</div></div>
+    <div class="c3row" style="--lw:158px;--lws:96px"><div class="c3lab">Has website</div><div class="c3track"><div class="c3grid"></div><div class="c3bar" style="--w:28.5%;--c1:#3b4250;--c2:#4a525f;transition-delay:450ms"><i></i><u></u></div></div><div class="c3val">0.077</div></div>
+    <div class="c3row" style="--lw:158px;--lws:96px"><div class="c3lab">Is eco (fly ash)</div><div class="c3track"><div class="c3grid"></div><div class="c3bar" style="--w:19.1%;--c1:#3b4250;--c2:#4a525f;transition-delay:525ms"><i></i><u></u></div></div><div class="c3val">0.052</div></div>
+  </div>
+  <div class="c3note">I went in assuming machine type would dominate. Company size beat it, and I reported that rather than re-running until the data agreed with me.</div>
+</div>
+<div class="c3" id="ch-mkt">
+  <div class="c3h">The state of the Telangana brick market</div>
+  <div class="c3s">355 manufacturers, 31 districts, scraped and cleaned from raw.</div>
+  <div class="c3rows">
+    <div class="c3row" style="--lw:210px;--lws:96px"><div class="c3lab">Operational <span style="color:var(--muted);font-weight:400;font-size:11px">&middot; healthy, active market</span></div><div class="c3track"><div class="c3grid"></div><div class="c3bar" style="--w:85.4%;--c1:#ffb703;--c2:#ff6b35;transition-delay:0ms"><i></i><u></u></div></div><div class="c3val">85.4%</div></div>
+    <div class="c3row" style="--lw:210px;--lws:96px"><div class="c3lab">Fly ash (eco) <span style="color:var(--muted);font-weight:400;font-size:11px">&middot; transition underway</span></div><div class="c3track"><div class="c3grid"></div><div class="c3bar" style="--w:65.9%;--c1:#ffb703;--c2:#ff6b35;transition-delay:75ms"><i></i><u></u></div></div><div class="c3val">65.9%</div></div>
+    <div class="c3row" style="--lw:210px;--lws:96px"><div class="c3lab">Still hand-made <span style="color:var(--muted);font-weight:400;font-size:11px">&middot; modernisation gap</span></div><div class="c3track"><div class="c3grid"></div><div class="c3bar" style="--w:55.0%;--c1:#ff6b35;--c2:#e63946;transition-delay:150ms"><i></i><u></u></div></div><div class="c3val">55.0%</div></div>
+    <div class="c3row" style="--lw:210px;--lws:96px"><div class="c3lab">Have a website <span style="color:var(--muted);font-weight:400;font-size:11px">&middot; uncontested moat</span></div><div class="c3track"><div class="c3grid"></div><div class="c3bar" style="--w:13.2%;--c1:#ff6b35;--c2:#e63946;transition-delay:225ms"><i></i><u></u></div></div><div class="c3val">13.2%</div></div>
+  </div>
+  <div class="c3note">Only 13.2% have any web presence. In a sector this size that is an almost uncontested advantage for whoever moves first.</div>
+</div>
+<div class="c3" id="ch-mod">
+  <div class="c3h">How the closure-risk model actually performed</div>
+  <div class="c3s">Random Forest, 5-fold stratified cross-validation. Recall highlighted because it is the metric I optimised for.</div>
+  <div class="c3rows">
+    <div class="c3row" style="--lw:158px;--lws:96px"><div class="c3lab">Accuracy</div><div class="c3track"><div class="c3grid"></div><div class="c3bar" style="--w:74.1%;--c1:#3b4250;--c2:#4a525f;transition-delay:0ms"><i></i><u></u></div></div><div class="c3val">0.741</div></div>
+    <div class="c3row" style="--lw:158px;--lws:96px"><div class="c3lab">Precision</div><div class="c3track"><div class="c3grid"></div><div class="c3bar" style="--w:31.4%;--c1:#3b4250;--c2:#4a525f;transition-delay:75ms"><i></i><u></u></div></div><div class="c3val">0.314</div></div>
+    <div class="c3row" style="--lw:158px;--lws:96px"><div class="c3lab">Recall</div><div class="c3track"><div class="c3grid"></div><div class="c3bar" style="--w:63.5%;--c1:#ff6b35;--c2:#e63946;transition-delay:150ms"><i></i><u></u></div></div><div class="c3val">0.635</div></div>
+    <div class="c3row" style="--lw:158px;--lws:96px"><div class="c3lab">F1</div><div class="c3track"><div class="c3grid"></div><div class="c3bar" style="--w:41.7%;--c1:#3b4250;--c2:#4a525f;transition-delay:225ms"><i></i><u></u></div></div><div class="c3val">0.417</div></div>
+  </div>
+  <div class="c3note">Precision is 0.314 &mdash; weak, and I am showing it anyway. With only 52 closures in the data this is risk profiling, not forecasting, and I said so in the report.</div>
+</div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section id="design"><div class="wrap">
+  <div class="rv"><span class="eyebrow">Design &amp; campaign work</span>
+  <h2>Retail campaign assets, <span class="em">built in-house</span></h2>
+  <p class="lead">Posters, covers and price-led creative for a live retail brand. Made to sell this week, not to win awards.</p></div>
+  <div class="gal">
+    <a class="gi rv" href="media/fb_cover.png" target="_blank"><img src="media/thumb_fb_cover.jpg" alt="Facebook cover" loading="lazy"><span><b>Facebook Cover &mdash; 820&times;312</b>Brand cover with clear CTA, store hours and locations</span></a>
+    <a class="gi rv" href="media/poster_eggchair.png" target="_blank"><img src="media/thumb_poster_eggchair.jpg" alt="Egg chair poster" loading="lazy"><span><b>Egg Chair Sale &mdash; A4</b>Price-anchored offer layout with feature icons</span></a>
+    <a class="gi rv" href="media/poster_fairy.png" target="_blank"><img src="media/thumb_poster_fairy.jpg" alt="Fairy wipes poster" loading="lazy"><span><b>Fairy Limon Wipes</b>Product hero with RRP-vs-our-price framing</span></a>
+    <a class="gi rv" href="media/poster_solar.png" target="_blank"><img src="media/thumb_poster_solar.jpg" alt="Solar panel poster" loading="lazy"><span><b>Litheli Solar Panel</b>Long-form spec layout, feature grid and closing banner</span></a>
+    <a class="gi rv" href="media/poster_powerstation.png" target="_blank"><img src="media/thumb_poster_powerstation.jpg" alt="Power station poster" loading="lazy"><span><b>Litheli Eclair 1000</b>Power station campaign poster</span></a>
+    <a class="gi rv" href="media/poster_powerstation_clean.png" target="_blank"><img src="media/thumb_poster_powerstation_clean.jpg" alt="Power station clean poster" loading="lazy"><span><b>Eclair 1000 &mdash; Clean Cut</b>Minimal variant for feed placement</span></a>
+    <a class="gi rv" href="media/poster_fairy_alt.png" target="_blank"><img src="media/thumb_poster_fairy_alt.jpg" alt="Fairy citrus poster" loading="lazy"><span><b>Fairy Limon &mdash; Citrus Fresh</b>Alternate creative for A/B testing</span></a>
+  </div>
+</div></section>
+
+<section id="teaching"><div class="wrap">
+  <div class="rv"><span class="eyebrow">Digital Equity &middot; Community work</span>
+  <h2>Teaching digital skills in <span class="em">Hyderabad classrooms</span></h2>
+  <p class="lead">Twelve months as an ICT Facilitator, running structured daily sessions for school students &mdash; search engines, safe internet use and everyday digital tools. Standing in front of a class, adapting on the fly and making sure every student actually got it is where I learned to explain things clearly.</p></div>
+  <div class="gal gal4">
+    <div class="gi rv"><img src="media/de_teaching.jpg" alt="Live teaching session" loading="lazy"><span><b>Live session</b>Delivering a digital literacy class on the smartboard</span></div>
+    <div class="gi rv"><img src="media/de_handson.jpg" alt="Hands-on support" loading="lazy"><span><b>Hands-on support</b>Walking students through the task device by device</span></div>
+    <div class="gi rv"><img src="media/de_team.jpg" alt="Facilitator team" loading="lazy"><span><b>Facilitator team</b>Setting up the classroom tech before a session</span></div>
+    <div class="gi rv"><img src="media/de_students.jpg" alt="After the session" loading="lazy"><span><b>After the session</b>The bit that made it worth it &mdash; December 2024</span></div>
+  </div>
+  <div class="bento" style="margin-top:16px">
+    <div class="bx k12 feat rv"><div class="bk">Recognition</div>
+      <h3>Letter of Work Experience &mdash; Digital Equity CEO</h3>
+      <p>Awarded for outstanding dedication, programme delivery and operational excellence across the full twelve-month placement.</p></div>
+  </div>
+</div></section>
+
+<section id="channel"><div class="wrap">
+  <div class="rv"><span class="eyebrow">Content creation</span>
+  <h2>Copy The Facts Telugu</h2>
+  <p class="lead">A channel built from zero. Every video researched, scripted, filmed, edited and published by me, with strategy shaped by what the performance data kept telling me.</p></div>
+  <div class="bento" style="margin-top:46px">
+    <div class="bx k4 rv"><div class="bnum">4,280+</div><div class="blab">Subscribers, fully organic</div></div>
+    <div class="bx k4 rv"><div class="bnum">1.2M+</div><div class="blab">Total views</div></div>
+    <div class="bx k4 rv"><div class="bnum">3 yrs</div><div class="blab">Weekly publishing, unbroken</div></div>
+    <div class="bx k12 rv"><div class="bk">What three years actually taught me</div>
+      <h3 style="font-size:1.28rem">I learned hooks by losing audiences</h3>
+      <p>I check retention after every upload to find the exact second attention breaks. It is almost always the opening, and almost always because I led with context instead of the interesting part.</p>
+      <p>That is the only way the lesson holds. You can read about hooks for a year and not internalise it; watch your own graph fall off a cliff at four seconds and you never make that mistake again.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <div class="rv"><span class="eyebrow">Toolkit</span>
+  <h2>What I <span class="em">work with</span></h2>
+  <p class="lead">Self-taught, project-tested, and still growing &mdash; currently learning advanced machine learning, data engineering and Microsoft Azure.</p></div>
+  <div class="sk">
+    <div class="skc rv"><div class="skh">Data &amp; Analysis</div><ul>
+      <li>Python &mdash; Pandas, NumPy</li><li>scikit-learn</li><li>SQL (working knowledge)</li><li>Statistical analysis</li><li>Feature engineering</li></ul></div>
+    <div class="skc rv"><div class="skh">Visualisation</div><ul>
+      <li>Power BI</li><li>Tableau</li><li>Advanced Excel</li><li>XLOOKUP &middot; Power Query</li><li>Dashboard design</li></ul></div>
+    <div class="skc rv"><div class="skh">Creative</div><ul>
+      <li>DaVinci Resolve</li><li>CapCut &mdash; editing &amp; grading</li><li>Canva &mdash; motion design</li><li>Poster &amp; social design</li><li>Scripting &amp; storytelling</li></ul></div>
+    <div class="skc rv"><div class="skh">Marketing</div><ul>
+      <li>Content strategy</li><li>Editorial calendars</li><li>Community management</li><li>Copywriting</li><li>Performance reporting</li></ul></div>
+  </div>
+</div></section>
+
+<section id="wins"><div class="wrap">
+  <div class="rv"><span class="eyebrow">Recognition</span><h2>Things I'm <span class="em">proud of</span></h2></div>
+  <div class="bento" style="margin-top:46px">
+    <div class="bx k4 rv"><h3>Zero to 4,280+</h3><p class="sm">Grew a science channel past 1.2M total views with no budget, no team and no prior editing experience.</p></div>
+    <div class="bx k4 rv"><h3>100/100 Opportunity Score</h3><p class="sm">Identified a zero-competition district for eco-brick expansion through independent market gap analysis.</p></div>
+    <div class="bx k4 rv"><h3>100% Stock Accuracy</h3><p class="sm">Held perfect stock accuracy across a full year of high-volume logistics at DX Group.</p></div>
+    <div class="bx k6 rv"><h3>Formal Letter of Work Experience</h3><p class="sm">Awarded by the Digital Equity CEO for dedication, programme delivery and operational excellence across twelve months in Hyderabad.</p></div>
+    <div class="bx k6 rv"><h3>Certified &amp; still learning</h3><p class="sm">Tableau &middot; Excel Macros &amp; VBA &middot; IIT Madras Analytical Thinking &middot; Google Maps API pipeline development.</p></div>
+  </div>
+</div></section>
+
+<section id="contact" style="padding-bottom:110px"><div class="wrap">
+  <div class="bx feat rv" style="padding:clamp(32px,5vw,60px)">
+    <span class="eyebrow">Get in touch</span>
+    <h2>Let's build something <span class="em">worth looking at</span></h2>
+    <p class="lead" style="margin-bottom:28px">Open to marketing analytics, content and digital growth roles. Based in Tipton, West Midlands.</p>
+    <div class="hcta" style="margin-top:0">
+      <a class="btn b1" href="mailto:kuntasrikanth00@gmail.com">kuntasrikanth00@gmail.com</a>
+      <a class="btn b2" href="https://linkedin.com/in/srikanthkunta" target="_blank" rel="noopener">LinkedIn &#8599;</a>
+      <a class="btn b2" href="https://github.com/kuntasrikanth" target="_blank" rel="noopener">GitHub &#8599;</a>
+    </div>
+  </div>
+  <p style="text-align:center;margin-top:40px;font-size:.82rem;color:var(--mut2)">Designed and built by Srikanth Kunta &middot; HTML, CSS and JavaScript, no framework</p>
+</div></section>
+
+<script>
+(function(){
+ var nav=document.getElementById('nav');
+ addEventListener('scroll',function(){nav.classList.toggle('stuck',scrollY>28)},{passive:true});
+
+ var h=document.getElementById('kh');
+ if(h){
+  var parts=h.innerHTML.split(/(<span class="em">[\s\S]*?<\/span>)/),out='',d=0;
+  parts.forEach(function(p){
+    if(!p) return;
+    if(p.indexOf('<span')===0){ out+='<span class="kw"><i style="animation-delay:'+(d+=95)+'ms">'+p+'</i></span> '; }
+    else { p.trim().split(/\s+/).forEach(function(w){ if(w) out+='<span class="kw"><i style="animation-delay:'+(d+=95)+'ms">'+w+'</i></span> '; }); }
+  });
+  h.innerHTML=out;
+ }
+
+ var io=new IntersectionObserver(function(es){
+   es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+ },{threshold:.1,rootMargin:'0px 0px -50px'});
+ document.querySelectorAll('.rv').forEach(function(el,i){ el.style.transitionDelay=((i%5)*60)+'ms'; io.observe(el); });
+
+ var cio=new IntersectionObserver(function(es){
+   es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('on'); cio.unobserve(e.target);} });
+ },{threshold:.18});
+ document.querySelectorAll('.c3').forEach(function(c){ cio.observe(c); });
+
+ document.querySelectorAll('.bx,.gi,.skc').forEach(function(b){
+   b.addEventListener('pointermove',function(e){
+     var r=b.getBoundingClientRect();
+     b.style.setProperty('--mx',(e.clientX-r.left)+'px');
+     b.style.setProperty('--my',(e.clientY-r.top)+'px');
+   });
+ });
+
+ document.querySelectorAll('video').forEach(function(v){
+   v.addEventListener('loadedmetadata',function(){
+     if(v.videoWidth>v.videoHeight){ v.style.aspectRatio='16/9'; }
+   });
+ });
+})();
+</script>
+</body>
+</html>
